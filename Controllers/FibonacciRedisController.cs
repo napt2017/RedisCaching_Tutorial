@@ -12,17 +12,14 @@ namespace RedisCaching_Tutorial.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class FibonacciController : ControllerBase
-    {
-        //private readonly IMemoryCache _memoryCache;
+    public class FibonacciRedisController : ControllerBase
+    { 
         private readonly IDistributedCache _distributedCache;
-        private readonly ILogger<FibonacciController> _logger;
+        private readonly ILogger<FibonacciRedisController> _logger;
 
-        public FibonacciController(  /*IMemoryCache memoryCache, */
-                                    IDistributedCache distributedCache, 
-                                    ILogger<FibonacciController> logger)
-        {
-            //_memoryCache = memoryCache;
+        public FibonacciRedisController( IDistributedCache distributedCache, 
+                                    ILogger<FibonacciRedisController> logger)
+        { 
             _distributedCache = distributedCache;
             _logger = logger;
         }
